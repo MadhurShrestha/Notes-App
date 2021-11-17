@@ -1,0 +1,36 @@
+<h3 class='d-flex justify-content-between mb-4'>
+  <div>
+    <%= @page.title %>
+    <%= link_to 'Edit', edit_notebook_page_path(@notebook,@page),class: 'btn btn-outline-primary' %>
+  </div>
+
+  <div>
+    <%= form_with(model: [@notebook, @page, @paragraph], html: {class: 'float-left'}) do |form| %>
+      <%= form.submit "Add Paragraph", class: 'btn btn-primary mr-1' %>
+    <% end %>
+    <%= form_with(model: [@notebook, @page, @image_element], html: {class: 'float-left'}) do |form| %>
+          <%= form.submit "Add Image", class: 'btn btn-primary mr-1' %>
+    <% end %>
+    <%= form_with(model: [@notebook, @page, @checklist], html: {class: 'float-left'}) do |form| %>
+      <%= form.submit "Add Checklist", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</h3>
+
+<div class="col-lg-10 offset-lg-1" >
+  <%= render @page.elements %>
+
+</div>
+
+<!--
+<% @page.paragraphs.each do |paragraph| %>
+  <% if paragraph.persisted? %>
+    <%= form_with(model: [@notebook, @page, paragraph]) do |form| %>
+      <%= form.rich_text_area :content %>
+      <%= form.submit "Add Paragraph", class: 'btn btn-primary' %>
+    <% end %>
+  <% end %>
+<% end %> -->
+
+
+
