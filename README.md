@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+This is a simple note-taking app consisting of various functionalities like adding text, images and adding checklists.
